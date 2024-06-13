@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -15,8 +16,11 @@ const config: Config = {
       },
     },
   },
+  darkMode: "class",
+
   plugins: [
     require('daisyui'),
+    require('@nextui-org/react'),
   ],
   daisyui: {
     themes: [
