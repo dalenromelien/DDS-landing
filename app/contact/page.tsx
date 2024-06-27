@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import { subscribe } from "@/app/actions";
+import Image from "next/image";
 
 const page = () => {
   const [state, formAction] = useFormState(subscribe, { message: "" });
@@ -142,9 +143,10 @@ const page = () => {
             <SubmitButton />
           </form>
         </div>
-        <img
+        <Image
           src="/burgundy_suit_fb.JPEG"
           className="lg:max-w-xl rounded-lg shadow-2xl"
+          alt=""
         />
       </div>
     </div>

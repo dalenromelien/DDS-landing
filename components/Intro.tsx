@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Intro = () => {
@@ -15,9 +16,10 @@ const Intro = () => {
             build features that help you and your business succeed
           </p>
         </div>
-        <img
+        <Image
           src="/gold_suit_hb.JPEG"
           className="lg:max-w-xl rounded-lg shadow-2xl"
+          alt=""
         />
       </div>
     </div>

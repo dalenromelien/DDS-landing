@@ -1,12 +1,14 @@
+import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
   return (
     <div className="hero min-h-fit my-16">
       <div className="hero-content flex-col lg:flex-row lg:space-x-20">
-        <img
+        <Image
           src="/navy_shirt_hs.jpeg"
           className="lg:max-w-xl rounded-lg shadow-2xl"
+          alt=""
         />
         <div className="flex items-center flex-col">
           <h1 className="text-5xl font-bold text-secondary text-center">
