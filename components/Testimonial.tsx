@@ -25,6 +25,8 @@ const Testimonial = ({
           src={image}
           alt="business logo or profile pic"
           className="max-h-16 max-w-16 rounded-full mr-4"
+          height={500}
+          width={500}
         />
         <div className="flex flex-col">
           <h3>{name}</h3>

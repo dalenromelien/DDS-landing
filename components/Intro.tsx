@@ -20,6 +20,8 @@ const Intro = () => {
           src="/gold_suit_hb.JPEG"
           className="lg:max-w-xl rounded-lg shadow-2xl"
           alt=""
+          height={500}
+          width={500}
         />
       </div>
     </div>

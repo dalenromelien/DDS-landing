@@ -9,6 +9,8 @@ const Hero = () => {
           src="/navy_shirt_hs.jpeg"
           className="lg:max-w-xl rounded-lg shadow-2xl"
           alt=""
+          height={500}
+          width={500}
         />
         <div className="flex items-center flex-col">
           <h1 className="text-5xl font-bold text-secondary text-center">
