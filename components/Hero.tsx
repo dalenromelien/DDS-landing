@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
@@ -20,9 +21,11 @@ const Hero = () => {
             Detroit based Software Engineer offering Web Development and Custom
             Software Solutions
           </p>
-          <button className="btn btn-secondary px-12 text-base-100">
-            Get Started
-          </button>
+          <Link href="/pricing">
+            <button className="btn btn-secondary px-12 text-base-100">
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
     </div>
