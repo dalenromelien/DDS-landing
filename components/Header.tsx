@@ -34,7 +34,7 @@ export default function App() {
         <NavbarBrand>
           <Link href="/">
             <p className="font-bold text-base-100">
-              Dalen&apos;s Digital Servicess
+              Dalen&apos;s Digital Services
             </p>
           </Link>
         </NavbarBrand>
