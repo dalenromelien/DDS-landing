@@ -13,7 +13,7 @@ export default function Home() {
         <Card
           image="/code-icon.svg"
           title="The Tech"
-          text="Developing local business sites with Next.JS for SEO  and WordPress and WooCommerce to power CMS and E-Commerce. Crafting Custom Solutions Utilizing the MERN Stack."
+          text="Developing local business sites with Next.JS for SEO  and Payload CMS for extensible content and product driven solutions. Crafting Custom Web App Solutions Utilizing the MERN Stack."
         />
         <Card
           image="/eye-icon.svg"
