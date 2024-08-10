@@ -1,11 +1,28 @@
-import Image from "next/image";
+"use client";
 import Hero from "@/components/Hero";
 import Card from "@/components/Card";
 import Intro from "@/components/Intro";
 import Testimonial from "@/components/Testimonial";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { getTestimonials } from "./actions";
 
 export default function Home() {
+  const [testimonials, setTestimonials] = useState(null);
+
+  useEffect(() => {
+    async function fetchTestimonials() {
+      try {
+        const res = await getTestimonials();
+        setTestimonials(res);
+      } catch (e) {
+        console.log("Error fetching testimonials: ", e);
+      }
+    }
+    fetchTestimonials();
+    console.log("Testimonials: ", testimonials);
+  }, [testimonials]);
+
   return (
     <>
       <Hero />

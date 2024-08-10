@@ -29,3 +29,23 @@ export async function subscribe(prevState: any, formData: FormData) {
     return {message: "failed"};
   }
 }
+
+export async function getTestimonials(){
+  try{
+    const response = await fetch(
+      "https://payload.dalensdigitalservices.com/api/testimonials",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = response.json();
+    console.log(data);
+    return data;
+  } catch (e) {
+    console.log("request failed with the error: ", e);
+    return {message: "failed"};
+  }
+}
