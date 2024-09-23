@@ -2,25 +2,34 @@
 import Hero from "@/components/Hero";
 import Card from "@/components/Card";
 import Intro from "@/components/Intro";
-import Testimonial from "@/components/Testimonial";
+import { Testimonial } from "@/Types/Testimonial";
+import TestimonialComponent from "@/components/TestimonialComponent";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getTestimonials } from "./actions";
 
 export default function Home() {
-  const [testimonials, setTestimonials] = useState(null);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
 
   useEffect(() => {
     async function fetchTestimonials() {
       try {
-        const res = await getTestimonials();
-        setTestimonials(res);
+        const res: Testimonial[] | { message: string } =
+          await getTestimonials();
+        if (Array.isArray(res)) {
+          setTestimonials(res);
+        } else {
+          console.log(res.message);
+        }
       } catch (e) {
         console.log("Error fetching testimonials: ", e);
       }
     }
     fetchTestimonials();
-    console.log("Testimonials: ", testimonials);
+  }, []);
+
+  useEffect(() => {
+    console.log(testimonials);
   }, [testimonials]);
 
   return (
@@ -49,27 +58,19 @@ export default function Home() {
         <h3 className="text-neutral">Hear from local Detroit Businesses</h3>
       </div>
       <div className="flex lg:flex-row flex-col lg:place-content-around justify-between items-center">
-        <Testimonial
-          name={"Chef D"}
-          quote={"Best SEO websites ever!"}
-          image={"/blue_shirt_hs.JPEG"}
-          business="Chef D's Kitchen"
-          link="dalensdigitalservices.com"
-        />
-        <Testimonial
-          name={"Chef D"}
-          quote={"Best SEO websites ever!"}
-          image={"/blue_shirt_hs.JPEG"}
-          business="Chef D's Kitchen"
-          link="dalensdigitalservices.com"
-        />
-        <Testimonial
-          name={"Chef D"}
-          quote={"Best SEO websites ever!"}
-          image={"/blue_shirt_hs.JPEG"}
-          business="Chef D's Kitchen"
-          link="dalensdigitalservices.com"
-        />
+        {testimonials &&
+          testimonials.map((testimonial, index) => {
+            return (
+              <TestimonialComponent
+                key={index}
+                name={testimonial?.name}
+                quote={testimonial?.quote}
+                image={testimonial?.image}
+                link={testimonial?.link}
+                business={testimonial?.business}
+              />
+            );
+          })}
       </div>
       <div className="flex items-center flex-col">
         <h1 className="text-6xl text-secondary m-10 mb-20 font-bold">

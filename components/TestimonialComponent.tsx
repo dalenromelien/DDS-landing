@@ -1,22 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { Testimonial } from "@/Types/Testimonial";
 
-type TestimonialProps = {
-  name: string;
-  quote: string;
-  image: string;
-  business: string;
-  link: string;
-};
-
-const Testimonial = ({
+const TestimonialComponent = ({
   name,
   quote,
   image,
   business,
   link,
-}: TestimonialProps) => {
+}: Testimonial) => {
   return (
     <div className="flex flex-col shadow-2xl h-90 lg:w-[27rem] w-5/6 p-8 rounded-xl mb-16">
       <h1 className="mb-8 text-large text-secondary font-bold">{`"${quote}"`}</h1>
@@ -39,4 +32,4 @@ const Testimonial = ({
   );
 };
 
-export default Testimonial;
+export default TestimonialComponent;

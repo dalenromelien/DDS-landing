@@ -57,6 +57,11 @@ export default function App() {
             About
           </Link>
         </NavbarItem>
+        <NavbarItem className="mx-4">
+          <Link href="/portfolio" className="text-base-100">
+            Portfolio
+          </Link>
+        </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
