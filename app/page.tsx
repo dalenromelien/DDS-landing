@@ -72,6 +72,7 @@ export default function Home() {
             );
           })}
       </div>
+      {/* turn this into a component. add to bottom of other pages like it */}
       <div className="flex items-center flex-col">
         <h1 className="text-6xl text-secondary m-10 mb-20 font-bold">
           Interested in what I have to offer?
