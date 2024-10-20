@@ -3,7 +3,7 @@ import React from "react";
 
 const PortfolioCard = () => {
   return (
-    <div className="flex flex-col text-left justify-between m-4 p-8 bg-white rounded-xl shadow-2xl space-y-5 w-full max-w-xs">
+    <div className="flex flex-col text-left justify-between lg:m-4 my-4 p-8 bg-white rounded-xl shadow-2xl space-y-5 w-full max-w-xs">
       {/* Image Container */}
       <div className="rounded-xl overflow-hidden">
         <Image
